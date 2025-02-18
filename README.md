@@ -15,7 +15,7 @@
 
 `IsValidIPv6(string) & IsValidIPv4(string)`
 
-`IsFileSizeValid(string filePath, string sizeWithUnit)` *accepting second string "b" bytes, "kb" - kilobytes, "mb" - megabytes, "gb" - gigabytes
+`IsFileSizeValid(string filePath, string sizeWithUnit)` *accepting second string "b" bytes, "kb" - kilobytes, "mb" - megabytes, "gb" - gigabytes*
 
 `IsSafeXSS(string)`
 
