@@ -2,6 +2,7 @@
 **Contributions and functionality additions to the project are welcome**
 
 **this library contains some methods what resolves popular problems of validation, easy names for methods, easy to start**
+
 ##Some examples with data types##
 
 ### IsValidEmail(string) ###
