@@ -3,29 +3,31 @@
 
 **this library contains some methods what resolves popular problems of validation, easy names for methods, easy to start**
 
-##Some examples with data types##
+#Some examples with data types#
 
-### IsValidEmail(string) ###
+`IsValidEmail(string)`
 
-###IsValidPhone(string)###
+`IsValidPhone(string)`
 
-###IsValidPassword(string, int minLength)### *also checking for some bad symbols* 
+`IsValidPassword(string, int minLength)`*also checking for some bad symbols* 
 
-###IsValidGuid(string)###
+`IsValidGuid(string)`
 
-###IsValidIPv6 & IsValidIPv4 (string) ###
+`IsValidIPv6(string) & IsValidIPv4(string)`
 
-###IsFileSizeValid(string filePath, string sizeWithUnit) ### *accepting second string "b" bytes, "kb" - kilobytes, "mb" - megabytes, "gb" - gigabytes
+`IsFileSizeValid(string filePath, string sizeWithUnit)` *accepting second string "b" bytes, "kb" - kilobytes, "mb" - megabytes, "gb" - gigabytes
 
-###IsSafeXSS(string)###
+`IsSafeXSS(string)`
 
-###IsValidVIN(string)###
+`IsValidVIN(string)`
 
-###IsValidCardNumber(string)###
+`IsValidCardNumber(string)`
 
-###IsValidMD5(string)###
+`IsValidMD5(string)`
 
-##Some examples to usage##
+*and lot more*
+
+#Some examples to usage#
 
 ```C#
         string uuid = "550e8400-e29b-41d4-a716-446655440000"; 
