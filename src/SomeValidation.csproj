@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard8.0</TargetFramework>
+        
+        <Version>1.0.0</Version>
+        
+        <Authors>richismyho</Authors>
+        <Company>richismyho</Company>
+        <Product>SomeValidation</Product>
+        <Description>Library with some validation methods</Description>
+        <Copyright>© richismyho 2025</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/richismyhoo/SomeValidation</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/richismyhoo/SomeValidation</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>validation utility library</PackageTags>
+    </PropertyGroup>
+
+</Project>
