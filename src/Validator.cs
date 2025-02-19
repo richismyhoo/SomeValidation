@@ -1,5 +1,6 @@
 ﻿using System.Net.Mail;
 using System.Text.RegularExpressions;
+using SomeValidation.Validation;
 
 namespace SomeValidation.Validation;
 
@@ -214,34 +215,16 @@ public static class Validator
         return degree * (Math.PI / 180);
     }
     
-    private static readonly HashSet<string> ValidCountryCodes = new HashSet<string>
-    {
-        "RU", "CA", "US", "CN", "BR", "AU", "IN", "AR", "KZ", "DZ",
-        "CD", "GL", "SA", "MX", "ID", "SD", "LY", "IR", "MN", "PE"
-    };
 
     public static bool IsValidCountryCode(string countryCode)
     {
-        return ValidCountryCodes.Contains(countryCode.ToUpper());
+        return StaticValues.ValidCountryCodes.Contains(countryCode.ToUpper());
     }
     
-    private static readonly HashSet<string> ValidCurrencyCodes = new HashSet<string>
-    {
-        "RUB", "CAD", "USD", "CNY", "BRL", "AUD", "INR", "ARS", "KZT", "DZD",
-        "CDF", "DKK", "SAR", "MXN", "IDR", "SDG", "LYD", "IRR", "MNT", "PEN"
-    };
-
     public static bool IsValidCurrencyCode(string currencyCode)
     {
-        return ValidCurrencyCodes.Contains(currencyCode.ToUpper());
+        return StaticValues.ValidCurrencyCodes.Contains(currencyCode.ToUpper());
     }
-    
-    private static readonly string[] VINValues = {
-        "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-        "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" 
-    };
-
-    private static readonly int[] VINWeights = { 8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2 };
 
     public static bool IsValidVIN(string vin)
     {
@@ -269,9 +252,9 @@ public static class Validator
             if (Char.IsDigit(c))
                 value = c - '0';
             else
-                value = Array.IndexOf(VINValues, c.ToString());
+                value = Array.IndexOf(StaticValues.VINValues, c.ToString());
 
-            sum += value * VINWeights[i];
+            sum += value * StaticValues.VINWeights[i];
         }
 
         int remainder = sum % 11;
@@ -333,5 +316,24 @@ public static class Validator
     {
         string pattern = @"^[a-fA-F0-9]{64}$";
         return Regex.IsMatch(hash, pattern);
+    }
+
+    public static bool IsValidHashtag(string hashtag)
+    {
+        if (string.IsNullOrWhiteSpace(hashtag))
+            return false;
+
+        return StaticValues.HashtagRegex.IsMatch(hashtag);
+    }
+    
+
+
+    public static bool IsValidPassport(string country, string passportNumber)
+    {
+        if (StaticValues.PassportRegex.TryGetValue(country, out var regex))
+        {
+            return regex.IsMatch(passportNumber);
+        }
+        return false;
     }
 }
