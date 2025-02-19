@@ -1,8 +1,10 @@
 ﻿using System.Net.Mail;
 using System.Text.RegularExpressions;
-using SomeValidation.Validation;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
-namespace SomeValidation.Validation;
+namespace SomeValidation;
 
 public static class Validator
 {

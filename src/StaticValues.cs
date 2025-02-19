@@ -1,6 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+using System;
+using System.Collections.Generic;
 
-namespace SomeValidation.Validation;
+namespace SomeValidation;
 
 public class StaticValues
 {
