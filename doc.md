@@ -2,7 +2,7 @@
 
 ### You can see available in latest version country codes and currency codes in /src/StaticValues.cs
 
-```c#
+```C#
 IsValidEmail(string email) //checking email string for validity
 
 IsValidIsoDate(string date)  //checking is iso date string correct
@@ -64,4 +64,4 @@ IsValidSHA256(string hash) // is string correct sha256 hash
 IsValidHashtag(string hashtag) // is string valid hashtag format
 
 IsValidPassport(string country, string passport) // check is passport correct for country
-
+```
