@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace SomeValidation;
@@ -21,6 +22,22 @@ public static class Validator
         }
     }
 
+    public static bool IsValidIsoDate(string date)
+    {
+        if (string.IsNullOrWhiteSpace(date) || !StaticValues.IsoDateRegex.IsMatch(date))
+            return false;
+
+        return DateTime.TryParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _);
+    }
+    
+    public static bool InRange(int value, int min, int max)
+    {
+        if (value > min || value < max)
+            return true;
+        else 
+            return false;
+    }
+    
     public static bool IsMinLength(int minLength, string stringToCheck)
     {
         if (stringToCheck.Length < minLength)

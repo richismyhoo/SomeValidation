@@ -6,7 +6,10 @@ namespace SomeValidation;
 
 public class StaticValues
 {
-        public static readonly Dictionary<string, Regex> PassportRegex = new Dictionary<string, Regex>
+    
+    public static readonly Regex IsoDateRegex = new Regex(@"^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$", RegexOptions.Compiled);
+    
+    public static readonly Dictionary<string, Regex> PassportRegex = new Dictionary<string, Regex>
     {
         { "USA", new Regex(@"^\d{9}$") },
         { "China", new Regex(@"^[EG]\d{8}$") },
