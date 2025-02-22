@@ -1,6 +1,8 @@
 ﻿# SomeValidation library for .NET C#
 **Contributions and functionality additions to the project are welcome**
 
+## Documentation in main directory in file doc.md
+
 *place star if this lib was helpful!*
 
 **this library contains some methods what resolves popular problems of validation, easy names for methods, easy to start**
